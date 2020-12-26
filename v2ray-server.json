@@ -1,0 +1,25 @@
+{
+    "log": {
+        "access": "/app/access.log",
+        "error": "/app/error.log",
+        "loglevel": "debug"
+    },
+    "inbounds": [
+        {
+            "port": 80,
+            "protocol": "vmess",
+            "settings": {
+                "clients": [
+                    {
+                        "id": "UUID"
+                    }
+                ]
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom"
+        }
+    ]
+}

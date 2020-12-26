@@ -1,0 +1,41 @@
+{
+    "log": {
+        "access": "/app/access.log",
+        "error": "/app/error.log",
+        "loglevel": "debug"
+    },
+    "inbounds": [
+        {
+            "port": 4444,
+            "listen": "0.0.0.0",
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            }
+        },
+        {
+            "port": 4445,
+            "listen": "0.0.0.0",
+            "protocol": "http",
+            "timeout": 0
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vmess",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "墙外服务器IP",
+                        "port": 80,
+                        "users": [
+                            {
+                                "id": "服务器上UUID"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
